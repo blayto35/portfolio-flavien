@@ -1,0 +1,965 @@
+/* ========================================= */
+/* 1. CONFIGURATION GÉNÉRALE */
+/* ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #171717;
+    color: #F5F1EC;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ========================================= */
+/* 2. NAVIGATION */
+/* ========================================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10%;
+}
+
+/* Logo développeur */
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    transition: transform 0.3s ease;
+}
+
+.logo-bracket {
+    color: #E8A8B7;
+}
+
+.logo-text {
+    color: #F5F1EC;
+    margin: 0 3px;
+}
+
+.logo-slash {
+    color: #E8A8B7;
+    margin-right: 3px;
+}
+
+.logo:hover {
+    transform: translateY(-3px);
+}
+
+/* Liens de navigation */
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #BDB8B4;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #E8A8B7;
+}
+
+
+/* ========================================= */
+/* 3. ACCUEIL */
+/* ========================================= */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    min-height: 85vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+    padding: 0 10%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+
+    flex: 1;
+    max-width: 750px;
+    min-width: 0;
+}
+
+/* Sous-titre */
+
+.hero-subtitle {
+    color: #E8A8B7;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.hero-subtitle span {
+    display: inline-block;
+    width: 25px;
+    height: 1px;
+    background-color: #E8A8B7;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Titre principal */
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 75px);
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #E8A8B7;
+}
+
+/* Description */
+
+.hero-description {
+    color: #AAA5A1;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 550px;
+    margin-bottom: 35px;
+}
+
+
+/* ========================================= */
+/* 4. BOUTONS */
+/* ========================================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons a {
+    padding: 14px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: #E8A8B7;
+    color: #171717;
+}
+
+.btn-primary:hover {
+    background-color: #F4DCE2;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 1px solid #555;
+    color: #F5F1EC;
+}
+
+.btn-secondary:hover {
+    border-color: #E8A8B7;
+    color: #E8A8B7;
+}
+
+
+/* ========================================= */
+/* 5. CARTE DÉVELOPPEUR */
+/* ========================================= */
+
+.developer-card {
+    position: relative;
+    z-index: 1;
+
+    width: 420px;
+    flex-shrink: 0;
+
+    background-color: #202020;
+    border: 1px solid #383838;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.developer-card:hover {
+    transform: translateY(-8px);
+    border-color: #E8A8B7;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 25px rgba(232, 168, 183, 0.12);
+}
+
+/* En-tête de la carte */
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 16px 20px;
+
+    background-color: #292929;
+    border-bottom: 1px solid #383838;
+}
+
+/* Petits points */
+
+.card-dots {
+    display: flex;
+    gap: 7px;
+}
+
+.card-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #E8A8B7;
+}
+
+.card-dots span:nth-child(2) {
+    opacity: 0.6;
+}
+
+.card-dots span:nth-child(3) {
+    opacity: 0.3;
+}
+
+.card-header p {
+    color: #AAA5A1;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+/* Code */
+
+.card-code {
+    padding: 30px 25px;
+
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 2.2;
+
+    color: #F5F1EC;
+}
+
+.code-indent {
+    padding-left: 25px;
+}
+
+.code-purple {
+    color: #C792EA;
+}
+
+.code-green {
+    color: #C3E88D;
+}
+
+/* Pied de carte */
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 15px 25px;
+
+    border-top: 1px solid #383838;
+
+    color: #AAA5A1;
+    font-size: 12px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    background-color: #8BC98B;
+    border-radius: 50%;
+}
+
+/* Animation du code */
+
+.card-code p {
+    opacity: 0;
+    animation: apparitionCode 0.5s ease forwards;
+}
+
+.card-code p:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card-code p:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.card-code p:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.card-code p:nth-child(4) {
+    animation-delay: 1.1s;
+}
+
+.card-code p:nth-child(5) {
+    animation-delay: 1.4s;
+}
+
+.card-code p:nth-child(6) {
+    animation-delay: 1.7s;
+}
+
+.card-code p:nth-child(7) {
+    animation-delay: 2s;
+}
+
+@keyframes apparitionCode {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ========================================= */
+/* 6. LUNE JAPONAISE */
+/* ========================================= */
+
+.japanese-moon {
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: 12%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 40% 40%,
+        #F4DCE2 0%,
+        #E8A8B7 40%,
+        #C87991 75%,
+        transparent 100%
+    );
+
+    opacity: 0.45;
+    filter: blur(2px);
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* ========================================= */
+/* 7. SECTION À PROPOS */
+/* ========================================= */
+
+.about {
+    padding: 120px 10%;
+    background-color: #1D1D1D;
+}
+
+.about-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    color: #E8A8B7;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    font-size: clamp(35px, 5vw, 50px);
+    margin-bottom: 30px;
+}
+
+.about h2 span {
+    color: #E8A8B7;
+}
+
+.about-description {
+    color: #AAA5A1;
+    font-size: 17px;
+    line-height: 1.9;
+    max-width: 750px;
+}
+
+/* Informations personnelles */
+
+.about-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.detail-label {
+    color: #E8A8B7;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.about-details p {
+    color: #F5F1EC;
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+
+/* ========================================= */
+/* 8. SECTION COMPÉTENCES */
+/* ========================================= */
+
+.skills {
+    padding: 120px 10%;
+    background-color: #171717;
+}
+
+.skills-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skills h2 {
+    font-size: clamp(35px, 5vw, 50px);
+    margin-bottom: 20px;
+}
+
+.skills h2 span {
+    color: #E8A8B7;
+}
+
+.skills-description {
+    color: #AAA5A1;
+    font-size: 17px;
+    margin-bottom: 50px;
+    line-height: 1.8;
+}
+
+/* Grille des compétences */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.skill-card {
+    background-color: #242424;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 30px;
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #E8A8B7;
+}
+
+.skill-card h3 {
+    color: #F5F1EC;
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+/* Technologies */
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tags span {
+    background-color: #303030;
+    color: #E8A8B7;
+
+    border: 1px solid #444;
+    padding: 8px 14px;
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-family: monospace;
+}
+
+
+/* ========================================= */
+/* 9. SECTION PROJETS */
+/* ========================================= */
+
+.projects {
+    padding: 120px 10%;
+    background-color: #1D1D1D;
+}
+
+.projects-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.projects h2 {
+    font-size: clamp(35px, 5vw, 50px);
+    margin-bottom: 20px;
+}
+
+.projects h2 span {
+    color: #E8A8B7;
+}
+
+.projects-description {
+    color: #AAA5A1;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    max-width: 650px;
+}
+
+/* Grille des projets */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    position: relative;
+
+    background-color: #242424;
+    border: 1px solid #333;
+    border-radius: 10px;
+
+    padding: 35px;
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: #E8A8B7;
+}
+
+.project-number {
+    color: #E8A8B7;
+    font-family: monospace;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.project-card h3 {
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+.project-card p {
+    color: #AAA5A1;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* Technologies des projets */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-tags span {
+    background-color: #303030;
+    color: #E8A8B7;
+
+    border: 1px solid #444;
+    padding: 7px 12px;
+    border-radius: 5px;
+
+    font-size: 12px;
+    font-family: monospace;
+}
+
+
+/* ========================================= */
+/* 10. SECTION CONTACT */
+/* ========================================= */
+
+.contact {
+    padding: 120px 10%;
+    background-color: #171717;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    font-size: clamp(35px, 5vw, 50px);
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.contact h2 span {
+    color: #E8A8B7;
+}
+
+.contact-description {
+    color: #AAA5A1;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+/* Bouton de contact */
+
+.contact-button {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    background-color: #E8A8B7;
+    color: #171717;
+
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #F4DCE2;
+    transform: translateY(-3px);
+}
+
+/* Réseaux sociaux */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.social-links a {
+    color: #AAA5A1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #E8A8B7;
+}
+
+
+/* ========================================= */
+/* 11. PIED DE PAGE */
+/* ========================================= */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 10%;
+
+    background-color: #1D1D1D;
+    border-top: 1px solid #333;
+
+    color: #AAA5A1;
+    font-size: 14px;
+}
+
+.footer span {
+    color: #E8A8B7;
+}
+
+.footer a {
+    color: #E8A8B7;
+    text-decoration: none;
+}
+
+
+/* ========================================= */
+/* 12. ANIMATIONS */
+/* ========================================= */
+
+/* Pétales Sakura */
+
+.sakura-container {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    z-index: 10;
+}
+
+.sakura-petal {
+    position: absolute;
+    top: -30px;
+
+    width: 12px;
+    height: 16px;
+
+    background-color: #E8A8B7;
+    border-radius: 100% 0 100% 0;
+
+    opacity: 0.6;
+
+    animation: chute linear infinite;
+}
+
+@keyframes chute {
+    0% {
+        transform: translateY(-30px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* Apparition progressive au défilement */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ========================================= */
+/* 13. RESPONSIVE : TABLETTES */
+/* ========================================= */
+
+@media screen and (max-width: 900px) {
+
+    /* Navigation */
+
+    .navbar {
+        padding: 25px 5%;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    /* Accueil */
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        padding: 70px 6%;
+    }
+
+    .developer-card {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    /* Lune */
+
+    .japanese-moon {
+        width: 280px;
+        height: 280px;
+
+        right: -80px;
+        top: 25%;
+    }
+
+    /* Sections */
+
+    .about,
+    .skills,
+    .projects {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+}
+
+
+/* ========================================= */
+/* 14. RESPONSIVE : TÉLÉPHONES */
+/* ========================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* Navigation */
+
+    .navbar {
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px 5%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 20px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    /* Accueil */
+
+    .hero {
+        min-height: 75vh;
+        padding: 60px 7%;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Carte développeur */
+
+    .card-code {
+        font-size: 12px;
+        padding: 25px 15px;
+    }
+
+    /* À propos, compétences et projets */
+
+    .about,
+    .skills,
+    .projects {
+        padding: 80px 7%;
+    }
+
+    .about-details {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 25px;
+    }
+
+    /* Contact */
+
+    .contact {
+        padding: 80px 7%;
+    }
+
+    .social-links {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    /* Pied de page */
+
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+
+        text-align: center;
+        padding: 30px 7%;
+    }
+}
+
+
+/* ========================================= */
+/* 15. ACCESSIBILITÉ : RÉDUCTION DES ANIMATIONS */
+/* ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .sakura-petal {
+        display: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .card-code p {
+        opacity: 1;
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
